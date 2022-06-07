@@ -1,0 +1,72 @@
+/*custome properties*/
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --gris: #757575;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'krub', sans-serif;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 3.8rem;
+    font-weight: 400;
+}
+
+.titulo span {
+    font-size: 2rem;
+}
+
+.contenedor {
+    max-width: 120rem;
+    /*para que no se genere scroll a los costados*/
+    margin: 0 auto;
+    /*poner en el medio centrar*/
+}
+
+.nav-bg {
+    background-color: var(--secundario);
+}
+
+.navegacion-principal {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*tablet*/
+@media (min-width: 768xp) {
+    .navegacion-principal {
+        flex-direction: row;
+        align-items: center;
+        /*toma la prop de justify-content */
+    }
+}
+
+.navegacion-principal a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem 1rem;
+    /*de la orilla hacia adentro*/
+}
+
+/*para pasar por ensima del elemento y cambiarlo*/
+.navegacion-principal a:hover {
+    background-color: var(--primario);
+    color: var(--oscuro)
+}
+
+/*de 480 para arriba actua como esta adentro */
+@media (min-width:280px) {}
