@@ -5,12 +5,15 @@
     --primario: #ffc107;
     --secundario: #0097a7;
     --gris: #757575;
+    --grisclaro: #DFE9F3;
 }
 
+/*Globales*/
 /* cap 36 CSS Box Model*/
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+    /*Hack para Box Model*/
 }
 
 *,
@@ -22,8 +25,46 @@ html {
 body {
     font-size: 16px;
     font-family: 'krub', sans-serif;
+    background-image: linear-gradient(to top, --grisclaro 0%, var(--blanco) 100%);
 }
 
+.contenedor {
+    max-width: 120rem;
+    /*para que no se genere scroll a los costados*/
+    margin: 0 auto;
+    /*poner en el medio centrar*/
+}
+
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+        /*se resetea*/
+    }
+}
+
+.sombra {
+    box-shadow: 0px 5px 15px 0px rgba(112, 112, 112, 0.55);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+
+}
+
+/*tipografia*/
 h1 {
     font-size: 3.8rem;
 }
@@ -46,13 +87,7 @@ h3 {
     font-size: 2rem;
 }
 
-.contenedor {
-    max-width: 120rem;
-    /*para que no se genere scroll a los costados*/
-    margin: 0 auto;
-    /*poner en el medio centrar*/
-}
-
+/*Navegacion*/
 .nav-bg {
     background-color: var(--secundario);
 }
@@ -89,7 +124,7 @@ h3 {
 }
 
 
-
+/*Hero*/
 .hero {
     background-image: url(../img/hero.jpg);
     background-repeat: no-repeat;
@@ -100,6 +135,7 @@ h3 {
     /*el padre de contenido_hero tiene que 
     se relativo para que el hijo pueda 
     estar en posicion absoluta*/
+    margin-bottom: 2rem;
 
 }
 
@@ -125,7 +161,49 @@ h3 {
     color: var(--blanco);
 }
 
-.ubicacion {
+.contenido-hero .ubicacion {
     display: flex;
+    /*propiedades de FLEXBOX*/
     align-items: flex-end;
+}
+
+/*Servicios*/
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;
+        /*propiedades de CSS GRID*/
+        grid-template-columns: repeat(3, 1fr);
+        /* grid se encarga de la fraccion que 
+    le pertenecea cada columna 
+    (3 columnas en este caso) */
+        /*grid: 200px 800px / 300px 300px*/
+        column-gap: 5rem;
+        /*separacion entre columnas*/
+    }
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3 {
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+.servicio p {
+    line-height: 2;
+    text-align: center;
+}
+
+.servicio .iconos {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
