@@ -11,10 +11,20 @@
 /*Globales*/
 /* cap 36 CSS Box Model*/
 html {
+    /*Hack para Box Model*/
     font-size: 62.5%;
     box-sizing: border-box;
-    /*Hack para Box Model*/
+    scroll-snap-type: y mandatory;
 }
+
+/*Scroll Snap*/
+.servicios,
+.navegacion-principal,
+.formulario {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
 
 *,
 *:before,
@@ -39,7 +49,7 @@ body {
     background-color: var(--secundario);
     color: var(--blanco);
     padding: 1rem 3rem;
-    margin-top: 1rem;
+    margin-top: 4rem;
     font-size: 2rem;
     text-decoration: none;
     text-transform: uppercase;
@@ -47,6 +57,7 @@ body {
     border-radius: .5rem;
     width: 90%;
     text-align: center;
+    border: none;
 }
 
 @media (min-width: 768px) {
@@ -54,6 +65,12 @@ body {
         width: auto;
         /*se resetea*/
     }
+}
+
+/*hover es cuando pasas por encima de un elemeneto como reacciona*/
+.boton:hover {
+    cursor: pointer;
+    /*es una manito lo que aparece*/
 }
 
 .sombra {
@@ -85,6 +102,25 @@ h3 {
 
 .titulo span {
     font-size: 2rem;
+}
+
+/*utilidades*/
+.w-sm-100 {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .w-sm-100 {
+        width: auto;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.alinear-derecha {
+    justify-content: flex-end;
 }
 
 /*Navegacion*/
@@ -167,6 +203,7 @@ h3 {
     align-items: flex-end;
 }
 
+
 /*Servicios*/
 @media (min-width: 768px) {
     .servicios {
@@ -206,4 +243,73 @@ h3 {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+/*contacto*/
+.formulario {
+    background-color: var(--gris);
+    width: min(60rem, 100%);
+    /*utilizar el valor mas pequeño*/
+    margin: 0 auto;
+    /*usar solo en formularios sin padre con display-flex*/
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset {
+    border: none;
+
+}
+
+.formulario legend {
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario)
+}
+
+@media (min-width: 768px) {
+    .contenedor-campos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+        /*separacion de columnas*/
+    }
+
+    /*seleccionas como si fuera un arreglo por posicion*/
+    .campo:nth-child(3),
+    .campo:nth-child(4) {
+        grid-column: 1 / 3;
+    }
+}
+
+.campo {
+    margin-bottom: 1rem;
+
+}
+
+.campo label {
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+
+}
+
+.campo textarea {
+    height: 20rem;
+}
+
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.footer {
+    text-align: center;
 }

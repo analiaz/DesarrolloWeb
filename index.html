@@ -112,35 +112,37 @@
     </main>
     <section>
         <h2>Contacto</h2>
-        <form>
+        <form class="formulario">
             <!--grupo de campos es exclusico de los formularios-->
             <fieldset>
                 <!--Para dar informacion a los usuarios antes de los campos-->
                 <legend>Contactanos llenando todos los campos</legend>
-                <div>
-                    <label>Nombre</label>
-                    <input type="text" placeholder="tu nombre">
+                <div class="contenedor-campos">
+                    <div class="campo">
+                        <label>Nombre</label>
+                        <input class="input-text" type="text" placeholder="tu nombre">
+                    </div>
+                    <div class="campo">
+                        <label>Telefono</label>
+                        <input class="input-text" type="tel" placeholder="tu telefono">
+                    </div>
+                    <div class="campo">
+                        <label>Correo</label>
+                        <input class="input-text" type="email" placeholder="tu email">
+                    </div>
+                    <div class="campo">
+                        <label>Mensaje</label>
+                        <textarea class="input-text"></textarea>
+                    </div>
                 </div>
-                <div>
-                    <label>Telefono</label>
-                    <input type="tel" placeholder="tu telefono">
-                </div>
-                <div>
-                    <label>Correo</label>
-                    <input type="email" placeholder="tu email">
-                </div>
-                <div>
-                    <label>Mensaje</label>
-                    <textarea></textarea>
-                </div>
-                <div>
-                    <input type="submit" value="enviar">
+                <div class="alinear-derecha flex">
+                    <input class="boton w-sm-100" type="submit" value="enviar">
                 </div>
             </fieldset>
         </form>
     </section>
 
-    <footer>
+    <footer class="footer">
         <p>Todos los derechos reservados. Analia Lujan Zunino </p>
     </footer>
 
